@@ -43,7 +43,7 @@ function Get-SystemInfo {
     Write-ColorText "Gathering System Information..." "Magenta"
     Get-AnimatedLoading -Message "Scanning system" -Seconds 2
     
-    Write-Host "`n" + ("=" * 60) -ForegroundColor DarkGray
+    Write-Host "`n$("=" * 60)" -ForegroundColor DarkGray
     Write-ColorText "SYSTEM INFORMATION DASHBOARD" "White"
     Write-Host ("=" * 60) -ForegroundColor DarkGray
     
@@ -80,7 +80,7 @@ function Get-SystemInfo {
         Write-ColorText "   IP Address: $($network.IPAddress[0])" "White"
     }
     
-    Write-Host "`n" + ("=" * 60) -ForegroundColor DarkGray
+    Write-Host "`n$("=" * 60)" -ForegroundColor DarkGray
 }
 
 function Show-InteractiveMenu {
