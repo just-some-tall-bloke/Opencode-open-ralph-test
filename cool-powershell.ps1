@@ -20,11 +20,6 @@ function Show-RalphFace {
    |____/   \___/|____/|_|\_\  |____/_/    \_\____/|_||_||____/ 
 '@
     
-    Write-Host $faces -ForegroundColor Cyan
-    Write-Host ""
-    Write-ColorText "Ralph Wiggum says:" "Yellow"
-    Write-ColorText "    'I'm learning to use PowerShell!'" "Green"
-    Write-Host ""
 }
 
 function Get-AnimatedLoading {
@@ -147,7 +142,7 @@ function Invoke-HealthCheck {
 # Main Program
 function Start-RalphPowerShell {
     Clear-Host
-    Write-ColorText "Welcome to Ralph Wiggum's Cool PowerShell Script!" "Yellow"
+    Write-ColorText "Reticulating splines" "Yellow"
     Start-Sleep -Seconds 2
     
     do {
