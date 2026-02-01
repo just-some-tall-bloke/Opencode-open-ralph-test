@@ -1,10 +1,17 @@
 # Opencode-open-ralph-test
 
-A test repository showcasing a cool PowerShell script with interactive features and system information display.
+A test repository showcasing multi-platform system information display scripts with interactive features and Ralph Wiggum theming.
 
-## Cool PowerShell Script
+## Multi-Platform System Dashboard
 
-This repository contains an interactive PowerShell script that combines fun ASCII art, animations, and useful system utilities - all with a Ralph Wiggum theme!
+This repository contains interactive system information scripts for multiple platforms that combine fun ASCII art, animations, and useful system utilities - all with a Ralph Wiggum theme!
+
+### Available Scripts
+
+- **Windows**: `cool-powershell.ps1` - PowerShell script for Windows systems
+- **Cross-Platform**: `ralph-dashboard.py` - Python script for Windows, Linux, and macOS
+- **Linux/macOS**: `ralph-dashboard.sh` - Bash script for Unix-like systems
+- **Universal Launcher**: `run-dashboard.py` - Auto-detects platform and launches appropriate script
 
 ### Features
 
@@ -13,28 +20,61 @@ This repository contains an interactive PowerShell script that combines fun ASCI
 - **System Information Dashboard**: Comprehensive hardware and software details
 - **Real-time Monitoring**: Process viewer, uptime tracker, and health checks
 - **Ralph Quotes**: Random Ralph Wiggum wisdom throughout the experience
+- **Cross-Platform Compatibility**: Works on Windows, Linux, and macOS
 
-### Getting Started
+### Quick Start
 
 1. Clone this repository:
-   ```powershell
+   ```bash
    git clone <repository-url>
    cd Opencode-open-ralph-test
    ```
 
-2. Run the script:
-   ```powershell
-   .\cool-powershell.ps1
+2. **Universal Launcher (Recommended)**:
+   ```bash
+   python3 run-dashboard.py
    ```
+   This automatically detects your platform and runs the appropriate script.
 
-3. **Important**: If you get execution policy errors, run:
-   ```powershell
-   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-   ```
+3. **Platform-Specific Scripts**:
+   - **Windows**: `.\cool-powershell.ps1`
+   - **Python (All platforms)**: `python3 ralph-dashboard.py`
+   - **Linux/macOS**: `./ralph-dashboard.sh`
+
+### Platform Setup
+
+#### Windows
+```powershell
+# For PowerShell script
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+# For Python script (alternative)
+python3 ralph-dashboard.py
+```
+
+#### Linux/macOS
+```bash
+# Make bash script executable
+chmod +x ralph-dashboard.sh
+
+# Install Python dependencies (for Python version)
+pip3 install psutil
+
+# Install bc for bash script calculations
+sudo apt-get install bc    # Ubuntu/Debian
+sudo yum install bc        # CentOS/RHEL
+brew install bc            # macOS
+```
+
+#### Python Requirements
+```bash
+# Install required package
+pip3 install psutil
+```
 
 ### Interactive Options
 
-The script provides 5 main options:
+All scripts provide 5 main options:
 
 1. **Refresh system info** - Displays updated system information
 2. **Show running processes** - Top 10 processes by CPU usage
@@ -61,18 +101,42 @@ The script provides 5 main options:
 
 ### Technical Details
 
+#### PowerShell (Windows)
 - **Language**: PowerShell 5.1+
 - **Dependencies**: Windows Management Instrumentation (WMI)
 - **Platform**: Windows
 - **Compatibility**: Windows 10/11, Windows Server
 
+#### Python (Cross-Platform)
+- **Language**: Python 3.6+
+- **Dependencies**: psutil library
+- **Platform**: Windows, Linux, macOS
+- **Compatibility**: All modern systems
+
+#### Bash (Linux/macOS)
+- **Language**: Bash 4.0+
+- **Dependencies**: standard Unix utilities, bc
+- **Platform**: Linux, macOS
+- **Compatibility**: Most Unix-like systems
+
+### Platform-Specific Differences
+
+| Feature | PowerShell | Python | Bash |
+|---------|------------|--------|------|
+| **Windows Support** | ✅ Native | ✅ Full | ❌ Limited |
+| **Linux/macOS Support** | ❌ | ✅ Full | ✅ Native |
+| **Dependencies** | WMI | psutil | bc, coreutils |
+| **Installation** | Built-in | pip install | Package manager |
+| **Performance** | Fast | Moderate | Fast |
+
 ### Customization
 
-Feel free to modify the script to:
+Feel free to modify any script to:
 - Add new system metrics
 - Change color schemes
 - Add more Ralph Wiggum quotes
 - Include additional interactive options
+- Adapt for specific platform features
 
 ---
 
