@@ -84,7 +84,7 @@ function Get-SystemInfo {
 }
 
 function Show-InteractiveMenu {
-    Write-Host "`n🎮 INTERACTIVE OPTIONS:" "Magenta"
+    Write-Host "`nINTERACTIVE OPTIONS:" "Magenta"
     Write-ColorText "1. Refresh system info" "White"
     Write-ColorText "2. Show running processes" "White"
     Write-ColorText "3. Display uptime" "White"

@@ -2,11 +2,11 @@
 
 A test repository showcasing a cool PowerShell script with interactive features and system information display.
 
-## 🎮 Cool PowerShell Script
+## Cool PowerShell Script
 
 This repository contains an interactive PowerShell script that combines fun ASCII art, animations, and useful system utilities - all with a Ralph Wiggum theme!
 
-### ✨ Features
+### Features
 
 - **Animated ASCII Art**: Colorful Ralph Wiggum logo display
 - **Interactive Menu**: User-friendly options for different system utilities
@@ -14,7 +14,7 @@ This repository contains an interactive PowerShell script that combines fun ASCI
 - **Real-time Monitoring**: Process viewer, uptime tracker, and health checks
 - **Ralph Quotes**: Random Ralph Wiggum wisdom throughout the experience
 
-### 🚀 Getting Started
+### Getting Started
 
 1. Clone this repository:
    ```powershell
@@ -32,7 +32,7 @@ This repository contains an interactive PowerShell script that combines fun ASCI
    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
    ```
 
-### 🎯 Interactive Options
+### Interactive Options
 
 The script provides 5 main options:
 
@@ -42,7 +42,7 @@ The script provides 5 main options:
 4. **Run system health check** - CPU and memory usage diagnostics
 5. **Exit** - Close the application with a farewell quote
 
-### 📊 System Information Displayed
+### System Information Displayed
 
 - Computer name and user details
 - Operating system version and architecture
@@ -51,7 +51,7 @@ The script provides 5 main options:
 - Disk drive information with free space
 - Network adapter details
 
-### 🎨 Visual Features
+### Visual Features
 
 - Color-coded output for better readability
 - Animated loading indicators
@@ -59,14 +59,14 @@ The script provides 5 main options:
 - Progress indicators
 - Interactive menu system
 
-### 💻 Technical Details
+### Technical Details
 
 - **Language**: PowerShell 5.1+
 - **Dependencies**: Windows Management Instrumentation (WMI)
 - **Platform**: Windows
 - **Compatibility**: Windows 10/11, Windows Server
 
-### 🔧 Customization
+### Customization
 
 Feel free to modify the script to:
 - Add new system metrics
