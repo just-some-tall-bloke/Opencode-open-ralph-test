@@ -119,14 +119,14 @@ function Show-Processes {
 function Get-Uptime {
     $os = Get-WmiObject -Class Win32_OperatingSystem
     $uptime = (Get-Date) - $os.ConvertToDateTime($os.LastBootUpTime)
-    Write-Host "`n⏰ SYSTEM UPTIME:" "Cyan"
+    Write-Host "`nSYSTEM UPTIME:" "Cyan"
     Write-ColorText "   Days: $($uptime.Days)" "White"
     Write-ColorText "   Hours: $($uptime.Hours)" "White"
     Write-ColorText "   Minutes: $($uptime.Minutes)" "White"
 }
 
 function Invoke-HealthCheck {
-    Write-Host "`n🏥 SYSTEM HEALTH CHECK:" "Yellow"
+    Write-Host "`nSYSTEM HEALTH CHECK:" "Yellow"
     Get-AnimatedLoading -Message "Running diagnostics" -Seconds 2
     
     $cpuLoad = Get-WmiObject -Class Win32_Processor | Select-Object -ExpandProperty LoadPercentage
@@ -136,10 +136,10 @@ function Invoke-HealthCheck {
     $memoryUsage = [math]::Round((($totalMemory - $freeMemory) / $totalMemory) * 100, 1)
     
     Write-ColorText "   CPU Load: $cpuLoad%" "White"
-    if ($cpuLoad -lt 50) { Write-ColorText "   Status: ✅ Good" "Green" } else { Write-ColorText "   Status: ⚠️  High" "Yellow" }
+    if ($cpuLoad -lt 50) { Write-ColorText "   Status: Good" "Green" } else { Write-ColorText "   Status: High" "Yellow" }
     
     Write-ColorText "   Memory Usage: $memoryUsage%" "White"
-    if ($memoryUsage -lt 80) { Write-ColorText "   Status: ✅ Good" "Green" } else { Write-ColorText "   Status: ⚠️  High" "Yellow" }
+    if ($memoryUsage -lt 80) { Write-ColorText "   Status: Good" "Green" } else { Write-ColorText "   Status: High" "Yellow" }
     
     Write-ColorText "`n   $(Get-RandomRalphQuote)" "Magenta"
 }
@@ -147,7 +147,7 @@ function Invoke-HealthCheck {
 # Main Program
 function Start-RalphPowerShell {
     Clear-Host
-    Write-ColorText "🎉 Welcome to Ralph Wiggum's Cool PowerShell Script!" "Yellow"
+    Write-ColorText "Welcome to Ralph Wiggum's Cool PowerShell Script!" "Yellow"
     Start-Sleep -Seconds 2
     
     do {
@@ -162,12 +162,12 @@ function Start-RalphPowerShell {
             "3" { Get-Uptime }
             "4" { Invoke-HealthCheck }
             "5" { 
-                Write-Host "`n👋 Thanks for using Ralph's PowerShell script!" "Green"
+                Write-Host "`nThanks for using Ralph's PowerShell script!" "Green"
                 Write-Host "    '$(Get-RandomRalphQuote)'" "Cyan"
                 break
             }
             default { 
-                Write-Host "`n❌ Invalid choice. Please try again." "Red"
+                Write-Host "`nInvalid choice. Please try again." "Red"
                 Start-Sleep -Seconds 2
             }
         }
