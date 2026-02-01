@@ -3,7 +3,12 @@
 
 function Write-ColorText {
     param([string]$Text, [string]$Color = "White")
-    Write-Host $Text -ForegroundColor $Color
+    try {
+        Write-Host $Text -ForegroundColor $Color
+    }
+    catch {
+        Write-Host $Text -ForegroundColor White
+    }
 }
 
 function Show-RalphFace {
