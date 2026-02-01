@@ -37,14 +37,8 @@ def color_text(text, color=Colors.WHITE):
 
 def show_ralph_face():
     """Display Ralph Wiggum ASCII art"""
-    face = """
-    ____     ___  ____  _  _    ____    __    ____  _  _  ____ 
-   | __ )   / _ \\|  _ \\| |/ /  / ___|  /  \\  / ___|| || ||  _ \\
-   |  _ \\  | | | | | | | ' /   \\___ \\ / /\\ \\| |  _ | || || | | |
-   | |_) | | |_| | |_| | . \\    ___) / ____ \\ |_| || || || |_| |
-   |____/   \\___/|____/|_|\\_\\  |____/_/    \\_\\____/|_||_||____/ 
-    """
-    print(color_text(face, Colors.CYAN))
+    # ASCII art removed
+    print(color_text("Ralph Wiggum System Dashboard", Colors.CYAN))
 
 def animated_loading(message, seconds=3):
     """Show animated loading indicator"""

@@ -12,14 +12,8 @@ function Write-ColorText {
 }
 
 function Show-RalphFace {
-    $faces = @'
-    ____     ___  ____  _  _    ____    __    ____  _  _  ____ 
-   | __ )   / _ \|  _ \| |/ /  / ___|  /  \  / ___|| || ||  _ \
-   |  _ \  | | | | | | | ' /   \___ \ / /\ \| |  _ | || || | | |
-   | |_) | | |_| | |_| | . \    ___) / ____ \ |_| || || || |_| |
-   |____/   \___/|____/|_|\_\  |____/_/    \_\____/|_||_||____/ 
-'@
-    
+    # ASCII art removed
+    Write-Host "Ralph Wiggum System Dashboard" -ForegroundColor Cyan
 }
 
 function Get-AnimatedLoading {
