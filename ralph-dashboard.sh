@@ -27,13 +27,8 @@ detect_os() {
 
 # Function to show Ralph face ASCII art
 show_ralph_face() {
-    echo -e "${CYAN}
-    ____     ___  ____  _  _    ____    __    ____  _  _  ____ 
-   | __ )   / _ \|  _ \| |/ /  / ___|  /  \  / ___|| || ||  _ \\
-   |  _ \  | | | | | | | ' /   \___ \ / /\ \| |  _ | || || | | |
-   | |_) | | |_| | |_| | . \    ___) / ____ \ |_| || || || |_| |
-   |____/   \___/|____/|_|\_\  |____/_/    \_\____/|_||_||____/ 
-${NC}"
+    # ASCII art removed
+    echo -e "${CYAN}Ralph Wiggum System Dashboard${NC}"
 }
 
 # Function to show animated loading
