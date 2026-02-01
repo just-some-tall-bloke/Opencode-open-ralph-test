@@ -45,22 +45,22 @@ function Get-SystemInfo {
     Clear-Host
     Show-RalphFace
     
-    Write-ColorText "🔍 Gathering System Information..." "Magenta"
+    Write-ColorText "Gathering System Information..." "Magenta"
     Get-AnimatedLoading -Message "Scanning system" -Seconds 2
     
     Write-Host "`n" + ("=" * 60) -ForegroundColor DarkGray
-    Write-ColorText "📊 SYSTEM INFORMATION DASHBOARD" "White"
+    Write-ColorText "SYSTEM INFORMATION DASHBOARD" "White"
     Write-Host ("=" * 60) -ForegroundColor DarkGray
     
     # Computer Info
-    Write-Host "`n🖥️  COMPUTER INFORMATION:" "Cyan"
+    Write-Host "`nCOMPUTER INFORMATION:" "Cyan"
     Write-ColorText "   Computer Name: $env:COMPUTERNAME" "White"
     Write-ColorText "   Username: $env:USERNAME" "White"
     Write-ColorText "   OS Version: $((Get-WmiObject -Class Win32_OperatingSystem).Caption)" "White"
     Write-ColorText "   Architecture: $env:PROCESSOR_ARCHITECTURE" "White"
     
     # Hardware Info
-    Write-Host "`n💻 HARDWARE INFORMATION:" "Blue"
+    Write-Host "`nHARDWARE INFORMATION:" "Blue"
     $cpu = Get-WmiObject -Class Win32_Processor
     $memory = Get-WmiObject -Class Win32_ComputerSystem
     Write-ColorText "   CPU: $($cpu.Name)" "White"
@@ -68,7 +68,7 @@ function Get-SystemInfo {
     Write-ColorText "   Total RAM: $([math]::Round($memory.TotalPhysicalMemory / 1GB, 2)) GB" "White"
     
     # Disk Info
-    Write-Host "`n💾 DISK INFORMATION:" "Green"
+    Write-Host "`nDISK INFORMATION:" "Green"
     $disks = Get-WmiObject -Class Win32_LogicalDisk | Where-Object {$_.DriveType -eq 3}
     foreach ($disk in $disks) {
         $freeSpace = [math]::Round($disk.FreeSpace / 1GB, 2)
@@ -78,7 +78,7 @@ function Get-SystemInfo {
     }
     
     # Network Info
-    Write-Host "`n🌐 NETWORK INFORMATION:" "Yellow"
+    Write-Host "`nNETWORK INFORMATION:" "Yellow"
     $networks = Get-WmiObject -Class Win32_NetworkAdapterConfiguration | Where-Object {$_.IPEnabled -eq $true}
     foreach ($network in $networks) {
         Write-ColorText "   Adapter: $($network.Description)" "White"
@@ -112,7 +112,7 @@ function Get-RandomRalphQuote {
 }
 
 function Show-Processes {
-    Write-Host "`n🔄 TOP 10 PROCESSES BY CPU USAGE:" "Red"
+    Write-Host "`nTOP 10 PROCESSES BY CPU USAGE:" "Red"
     Get-Process | Sort-Object CPU -Descending | Select-Object -First 10 | Format-Table Name, CPU, WorkingSet, Id -AutoSize
 }
 
