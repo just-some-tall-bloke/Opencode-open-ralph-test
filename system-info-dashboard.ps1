@@ -1,5 +1,5 @@
-# Cool PowerShell System Info Display
-# Features ASCII art, animations, and interactive system information
+# PowerShell System Information Dashboard
+# Features animations and interactive system information
 
 function Write-ColorText {
     param([string]$Text, [string]$Color = "White")
@@ -11,9 +11,9 @@ function Write-ColorText {
     }
 }
 
-function Show-RalphFace {
+function Show-SystemHeader {
     # ASCII art removed
-    Write-Host "Ralph Wiggum System Dashboard" -ForegroundColor Cyan
+    Write-Host "System Information Dashboard" -ForegroundColor Cyan
 }
 
 function Get-AnimatedLoading {
@@ -32,7 +32,7 @@ function Get-AnimatedLoading {
 
 function Get-SystemInfo {
     Clear-Host
-    Show-RalphFace
+    Show-SystemHeader
     
     Write-ColorText "Gathering System Information..." "Magenta"
     Get-AnimatedLoading -Message "Scanning system" -Seconds 2
@@ -87,17 +87,17 @@ function Show-InteractiveMenu {
     Write-Host ""
 }
 
-function Get-RandomRalphQuote {
-    $quotes = @(
-        "I'm a unitard!",
-        "My cat's breath smells like cat food.",
-        "I bent my wookie.",
-        "I'm going to live with my underground friends.",
-        "My parents won't let me use scissors.",
-        "When I grow up, I want to be a principal or a caterpillar.",
-        "Me fail English? That's unpossible!"
+function Get-RandomSystemTip {
+    $tips = @(
+        "Regular maintenance keeps your system running smoothly.",
+        "Monitor disk usage to prevent running out of space.",
+        "Keep your system updated for better security.",
+        "Close unused applications to free up resources.",
+        "Check network connectivity for internet access.",
+        "Monitor system temperature to prevent overheating.",
+        "Regular backups prevent data loss."
     )
-    return $quotes | Get-Random
+    return $tips | Get-Random
 }
 
 function Show-Processes {
@@ -130,11 +130,11 @@ function Invoke-HealthCheck {
     Write-ColorText "   Memory Usage: $memoryUsage%" "White"
     if ($memoryUsage -lt 80) { Write-ColorText "   Status: Good" "Green" } else { Write-ColorText "   Status: High" "Yellow" }
     
-    Write-ColorText "`n   $(Get-RandomRalphQuote)" "Magenta"
+    Write-ColorText "`n   $(Get-RandomSystemTip)" "Magenta"
 }
 
 # Main Program
-function Start-RalphPowerShell {
+function Start-SystemDashboard {
     Clear-Host
     Write-ColorText "Reticulating splines" "Yellow"
     Start-Sleep -Seconds 2
@@ -151,8 +151,8 @@ function Start-RalphPowerShell {
             "3" { Get-Uptime }
             "4" { Invoke-HealthCheck }
             "5" { 
-                Write-Host "`nThanks for using Ralph's PowerShell script!" "Green"
-                Write-Host "    '$(Get-RandomRalphQuote)'" "Cyan"
+                Write-Host "`nThanks for using the System Information Dashboard!" "Green"
+                Write-Host "    '$(Get-RandomSystemTip)'" "Cyan"
                 break
             }
             default { 
@@ -169,4 +169,4 @@ function Start-RalphPowerShell {
 }
 
 # Run the main function
-Start-RalphPowerShell
+Start-SystemDashboard

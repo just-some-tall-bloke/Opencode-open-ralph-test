@@ -1,6 +1,6 @@
 #!/bin/bash
 # Cross-platform system information display with ASCII art and interactive features
-# Ralph Wiggum themed system dashboard for Linux/macOS
+# System Information Dashboard for Linux/macOS
 
 # Colors for terminal output
 RED='\033[0;31m'
@@ -25,10 +25,10 @@ detect_os() {
 }
 
 
-# Function to show Ralph face ASCII art
-show_ralph_face() {
+# Function to show system header
+show_system_header() {
     # ASCII art removed
-    echo -e "${CYAN}Ralph Wiggum System Dashboard${NC}"
+    echo -e "${CYAN}System Information Dashboard${NC}"
 }
 
 # Function to show animated loading
@@ -48,7 +48,7 @@ animated_loading() {
 # Function to get system information
 get_system_info() {
     clear
-    show_ralph_face
+    show_system_header
     
     echo -e "${MAGENTA}Gathering System Information...${NC}"
     animated_loading "Scanning system" 2
@@ -124,19 +124,19 @@ show_interactive_menu() {
     echo
 }
 
-# Function to get random Ralph quote
-get_random_ralph_quote() {
-    local quotes=(
-        "I'm a unitard!"
-        "My cat's breath smells like cat food."
-        "I bent my wookie."
-        "I'm going to live with my underground friends."
-        "My parents won't let me use scissors."
-        "When I grow up, I want to be a principal or a caterpillar."
-        "Me fail English? That's unpossible!"
+# Function to get random system tip
+get_random_system_tip() {
+    local tips=(
+        "Regular maintenance keeps your system running smoothly."
+        "Monitor disk usage to prevent running out of space."
+        "Keep your system updated for better security."
+        "Close unused applications to free up resources."
+        "Check network connectivity for internet access."
+        "Monitor system temperature to prevent overheating."
+        "Regular backups prevent data loss."
     )
-    local random_index=$((RANDOM % ${#quotes[@]}))
-    echo "${quotes[$random_index]}"
+    local random_index=$((RANDOM % ${#tips[@]}))
+    echo "${tips[$random_index]}"
 }
 
 # Function to show processes
@@ -220,12 +220,12 @@ run_health_check() {
         echo -e "${WHITE}   Status: ${YELLOW}High${NC}"
     fi
     
-    local quote=$(get_random_ralph_quote)
-    echo -e "${WHITE}\n   ${MAGENTA}$quote${NC}"
+    local tip=$(get_random_system_tip)
+    echo -e "${WHITE}\n   ${MAGENTA}$tip${NC}"
 }
 
 # Main program function
-start_ralph_dashboard() {
+start_system_dashboard() {
     clear
     echo -e "${YELLOW}Reticulating splines${NC}"
     sleep 2
@@ -251,8 +251,8 @@ start_ralph_dashboard() {
                 run_health_check
                 ;;
             5)
-                echo -e "\n${GREEN}Thanks for using Ralph's System Dashboard!${NC}"
-                echo -e "${WHITE}    '${CYAN}$(get_random_ralph_quote)${WHITE}'${NC}"
+                echo -e "\n${GREEN}Thanks for using the System Information Dashboard!${NC}"
+                echo -e "${WHITE}    '${CYAN}$(get_random_system_tip)${WHITE}'${NC}"
                 break
                 ;;
             *)
@@ -279,4 +279,4 @@ if ! command -v bc >/dev/null 2>&1; then
 fi
 
 # Start the main function
-start_ralph_dashboard
+start_system_dashboard

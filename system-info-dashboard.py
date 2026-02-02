@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Cross-platform system information display with ASCII art and interactive features
-Ralph Wiggum themed system dashboard
+System Information Dashboard
 """
 
 import os
@@ -35,10 +35,10 @@ def color_text(text, color=Colors.WHITE):
         return f"{color}{text}{Colors.END}"
     return text
 
-def show_ralph_face():
-    """Display Ralph Wiggum ASCII art"""
+def show_system_header():
+    """Display system information header"""
     # ASCII art removed
-    print(color_text("Ralph Wiggum System Dashboard", Colors.CYAN))
+    print(color_text("System Information Dashboard", Colors.CYAN))
 
 def animated_loading(message, seconds=3):
     """Show animated loading indicator"""
@@ -51,7 +51,7 @@ def animated_loading(message, seconds=3):
 def get_system_info():
     """Gather and display system information"""
     os.system('cls' if os.name == 'nt' else 'clear')
-    show_ralph_face()
+    show_system_header()
     
     print(color_text("Gathering System Information...", Colors.MAGENTA))
     animated_loading("Scanning system", 2)
@@ -112,18 +112,18 @@ def show_interactive_menu():
     print(color_text("5. Exit", Colors.WHITE))
     print()
 
-def get_random_ralph_quote():
-    """Return a random Ralph Wiggum quote"""
-    quotes = [
-        "I'm a unitard!",
-        "My cat's breath smells like cat food.",
-        "I bent my wookie.",
-        "I'm going to live with my underground friends.",
-        "My parents won't let me use scissors.",
-        "When I grow up, I want to be a principal or a caterpillar.",
-        "Me fail English? That's unpossible!"
+def get_random_system_tip():
+    """Return a random system tip"""
+    tips = [
+        "Regular maintenance keeps your system running smoothly.",
+        "Monitor disk usage to prevent running out of space.",
+        "Keep your system updated for better security.",
+        "Close unused applications to free up resources.",
+        "Check network connectivity for internet access.",
+        "Monitor system temperature to prevent overheating.",
+        "Regular backups prevent data loss."
     ]
-    return random.choice(quotes)
+    return random.choice(tips)
 
 def show_processes():
     """Display top processes by CPU usage"""
@@ -181,9 +181,9 @@ def run_health_check():
     else:
         print(color_text("   Status: High", Colors.YELLOW))
     
-    print(color_text(f"\n   {get_random_ralph_quote()}", Colors.MAGENTA))
+    print(color_text(f"\n   {get_random_system_tip()}", Colors.MAGENTA))
 
-def start_ralph_dashboard():
+def start_system_dashboard():
     """Main program loop"""
     os.system('cls' if os.name == 'nt' else 'clear')
     print(color_text("Reticulating splines", Colors.YELLOW))
@@ -208,8 +208,8 @@ def start_ralph_dashboard():
         elif choice == "4":
             run_health_check()
         elif choice == "5":
-            print(color_text("\nThanks for using Ralph's System Dashboard!", Colors.GREEN))
-            print(color_text(f"    '{get_random_ralph_quote()}'", Colors.CYAN))
+            print(color_text("\nThanks for using the System Information Dashboard!", Colors.GREEN))
+            print(color_text(f"    '{get_random_system_tip()}'", Colors.CYAN))
             break
         else:
             print(color_text("\nInvalid choice. Please try again.", Colors.RED))
@@ -234,6 +234,6 @@ if __name__ == "__main__":
         sys.exit(1)
     
     try:
-        start_ralph_dashboard()
+        start_system_dashboard()
     except KeyboardInterrupt:
         print(color_text("\n\nGoodbye!", Colors.GREEN))

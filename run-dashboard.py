@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Universal launcher for Ralph's System Dashboard
+Universal launcher for System Information Dashboard
 Automatically detects platform and launches the appropriate script
 """
 
@@ -59,7 +59,7 @@ def run_script(script_path, args=None):
 
 def main():
     """Main launcher function"""
-    print("🎯 Ralph's System Dashboard Launcher")
+    print("🎯 System Information Dashboard Launcher")
     print("=" * 40)
     
     platform_type = detect_platform()
@@ -73,17 +73,17 @@ def main():
     
     if platform_type == 'windows':
         scripts = [
-            ('PowerShell', os.path.join(script_dir, 'cool-powershell.ps1')),
-            ('Python', os.path.join(script_dir, 'ralph-dashboard.py')),
+            ('PowerShell', os.path.join(script_dir, 'system-info-dashboard.ps1')),
+            ('Python', os.path.join(script_dir, 'system-info-dashboard.py')),
         ]
     elif platform_type == 'unix':
         scripts = [
-            ('Bash', os.path.join(script_dir, 'ralph-dashboard.sh')),
-            ('Python', os.path.join(script_dir, 'ralph-dashboard.py')),
+            ('Bash', os.path.join(script_dir, 'system-info-dashboard.sh')),
+            ('Python', os.path.join(script_dir, 'system-info-dashboard.py')),
         ]
     else:
         scripts = [
-            ('Python', os.path.join(script_dir, 'ralph-dashboard.py')),
+            ('Python', os.path.join(script_dir, 'system-info-dashboard.py')),
         ]
     
     # Try each available script
@@ -120,18 +120,18 @@ def main():
 
 def show_help():
     """Display help information"""
-    print("Ralph's System Dashboard Launcher")
+    print("System Information Dashboard Launcher")
     print("=" * 40)
     print("\nUsage:")
     print("  python3 run-dashboard.py     # Auto-detect and run")
     print("  python3 run-dashboard.py --help    # Show this help")
     print("\nAvailable scripts (auto-detected by platform):")
     print("  Windows:")
-    print("    - cool-powershell.ps1    # PowerShell script")
-    print("    - ralph-dashboard.py     # Python script")
+    print("    - system-info-dashboard.ps1    # PowerShell script")
+    print("    - system-info-dashboard.py     # Python script")
     print("  Linux/macOS:")
-    print("    - ralph-dashboard.sh     # Bash script")
-    print("    - ralph-dashboard.py     # Python script")
+    print("    - system-info-dashboard.sh    # Bash script")
+    print("    - system-info-dashboard.py    # Python script")
     print("\nRequirements:")
     print("  Python: pip install psutil")
     print("  Bash/Unix: bc command")
